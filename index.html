@@ -10,22 +10,14 @@
 		<style>
 			#box{
 			
-			margin-left: auto;
-			//margin-right:20px;
+			margin-left:auto;
+			margin-right:auto;
 			
-         
 			background: #d6eaf8 ;
 			border-style: solid;
 			position:relative;
 			}
-			
-			#about{
-			width: 500px; 
-			margin-left: 
-			auto; margin-right: auto;"
-			}
-			
-			
+				
 			
 			.particle{
 			width:10px;
@@ -33,22 +25,6 @@
 			background:red;
 			border-radius:50%;
 			position:absolute;
-			}
-			
-			#settings{
-		
-			
-			
-			}
-			
-			
-			#main{
-			
-			text-align: center; 
-			//width:600px;
-			margin-top:20px;
-			margin-left: auto;
-			margin-right: auto;
 			}
 			
 			.btn-group.special {
@@ -266,13 +242,17 @@
 		window.onload = function(){
 		
 			var boxwrap = document.getElementById("boxwrapper");
-			boxsize = boxwrap.clientWidth - 50;
+			boxsize = boxwrap.clientWidth -50;
 			
 			var box = document.getElementById("box");
 			box.style.width=boxsize+"px";
 			box.style.height=boxsize+"px";
-		}
+			
+			if (boxsize<400)
+				for (let t=1;t<=3;t++)
+					document.getElementById(`count${t}`).value =5;
 		
+		}
 		
 		function generate(){
 		
