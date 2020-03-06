@@ -1,458 +1,165 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		 <meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-	
-		<title>Particles</title>
-		<style>
-			#box{
-			
-			margin-left:auto;
-			margin-right:auto;
-			
-			background: #d6eaf8 ;
-			border-style: solid;
-			position:relative;
-			}
-				
-			
-			.particle{
-			width:10px;
-			height:10px;
-			background:red;
-			border-radius:50%;
-			position:absolute;
-			}
-			
-			.btn-group.special {
-			display: flex;
-			}
-			
-			.col-form-label{
-			
-			padding-right:0;
-			}
-
-			.special .btn {
-			flex: 1
-			}
-		</style>
-		
-	</head>
-	<body>   
-		<div class="container">
-		
-			<div class = "row justify-content-center">
-				<div class="col-xs-12  col-sm-12 col-lg-7 col-md-12" style="text-align: center;">
-				
-					<h2><a href="https://github.com/nekitkee/Particles">Particles </a></h2>
-					<p> This is nano-particle closed system simulation. Choose parameters and see what happens !</p>
-				
-					<p><a href="https://twitter.com/nickwynther">@nickwynther</a> - <a href="https://github.com/nekitkee/Particles">GitHub repo</a></p>
-				</div>
-			
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+	<script type="text/javascript" src="js/functions.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/style.css" />
+	<title>Particles</title>
+</head>
+<body>   
+	<div class="container">
+		<div class = "row justify-content-center">
+			<div class="col-xs-12  col-sm-12 col-lg-7 col-md-12" style="text-align: center;">
+				<h2><a href="https://github.com/nekitkee/Particles">Particles </a></h2>
+				<p> This is nano-particle closed system simulation. Choose parameters and see what happens !</p>
+				<p><a href="https://twitter.com/nickwynther">@nickwynther</a> - <a href="https://github.com/nekitkee/Particles">GitHub repo</a></p>
 			</div>
-		
-			<div class="row">
-				
-				<div id="boxwrapper"  class="col-xs-12  col-sm-12 col-lg-7 col-md-12">
-
-					<div id="box"> </div> 
-					
-					
-				</div>
-				
-				<div class="col-xs-12  col-sm-12 col-lg-5 col-md-12">
-				
-				<div class="row">
-				
-		
-				<div  class="col-xs-12  col-sm-12 col-lg-6 col-md-6">
-				
-				
-				
-				<!--RED-->
-				<div class = "row">
-				
-					<div class="col-12 order-2 order-xs-2 order-sm-2 order-md-2 order-lg-1">
-				
-					<div class="card border-danger mb-3 mt-3">
-						<div class="card-header" style="color:red;">Red particles</div>
-						<div class="card-body ">
-							<form>
-								<div class="form-group row">
-									<label for="RedParticlesCount" class="col-5 col-form-label">count</label>
-									<div class="col-7">
-											<input type="text" class="form-control" id="count1" placeholder="count" value=10>
-									</div>
-								</div>
-								<div class="form-group row">
-									<label for="RedParticleWeight" class="col-5 col-form-label">weight</label>
-									<div class="col-7">
-										<input type="text" class="form-control" id="weight1" placeholder="weight" value=1000>
-									</div>
-								</div>
-								
-								<div class="form-group row">
-									<label for="RedParticleSize" class="col-5 col-form-label">size</label>
-									<div class="col-7">
-										<select class="form-control" id="size1">
-											<option>1</option>
-											<option >2</option>
-											<option selected="selected">3</option>
-										</select>
-									</div>
-								</div>
-							
-						</div>
-					</div>
-					</div>
-					
-					<!--PANEL-->
-					
-					<div class="col-12 order-1 order-xs-1 order-sm-1 order-md-1 order-lg-2 mt-3 mt-xs-3 mt-sm-3 mt-md-3">
-					
-					<div id="panel">
-					
-					<form>
-						<div class="form-group">
-						<label for="formControlRange">Speed:</label>
-						<input type="range" class="form-control-range" id="speed" min=1 max=50 value=30 step=1 onchange="updatespeed(this.value)">
-						</div>
-					</form>
-					
-					<div class="input-group">
-						<div class="input-group-prepend">
-							<div class="input-group-text" >gravity</div>
-						</div>
-						<input type="text" class="form-control" placeholder="gravity" value=0.00667 aria-label="Input group example" aria-describedby="btnGroupAddon" id = "gravity">
-					</div>
-					
-					<br>
-					
-					<div class="input-group">
-						<div class="input-group-prepend">
-							<div class="input-group-text">friction</div>
-						</div>
-						<input type="text" class="form-control" placeholder="gravity" value=0.9989 aria-label="Input group example" aria-describedby="btnGroupAddon" id = "friction">
-					</div>
-					
-			
-					<br>
-					<div class="btn-group special" >
-						<input type="button" class="btn btn-primary btn-block" onclick="start()" value="Start"> 
-						<input type="button" class="btn btn-secondary" onclick="stop()" value="Reset"> 
-					</div>
-					
-					</div>
-					</div>
-					
-					
-					</div>
-					
-					
-					
-					</div>
-					
-					<div  class="col-xs-12  col-sm-12 col-lg-6 col-md-6">
-					
-					<div class="card border-primary mb-3 mb-xs-3 mb-sm-3 mt-xs-3 mt-sm-3">
-						<div class="card-header" style="color:blue;">Blue particles</div>
-						<div class="card-body ">
-							<form>
-								<div class="form-group row">
-									<label for="RedParticlesCount" class="col-5 col-form-label">count</label>
-									<div class="col-7">
-											<input type="text" class="form-control" id="count2" placeholder="count" value=10>
-									</div>
-								</div>
-								<div class="form-group row">
-									<label for="RedParticleWeight" class="col-5 col-form-label">weight</label>
-									<div class="col-7">
-										<input type="text" class="form-control" id="weight2" placeholder="weight" value=1000>
-									</div>
-								</div>
-								
-								<div class="form-group row">
-									<label for="RedParticleSize" class="col-5 col-form-label">size</label>
-									<div class="col-7">
-										<select class="form-control" id="size2">
-											<option>1</option>
-											<option selected="selected">2</option>
-											<option>3</option>
-										</select>
-									</div>
-								</div>
-							
-						</div>
-					</div>
-					
-					<div class="card border-warning mb-3">
-						<div class="card-header" style="color:orange;">Orange particles</div>
-						<div class="card-body ">
-							<form>
-								<div class="form-group row">
-									<label for="RedParticlesCount" class="col-5 col-form-label">count</label>
-									<div class="col-7">
-											<input type="text" class="form-control" id="count3" placeholder="count" value=10>
-									</div>
-								</div>
-								<div class="form-group row">
-									<label for="RedParticleWeight" class="col-5 col-form-label">weight</label>
-									<div class="col-7">
-										<input type="text" class="form-control" id="weight3" placeholder="weight" value=500>
-									</div>
-								</div>
-								
-								<div class="form-group row">
-									<label for="RedParticleSize" class="col-5 col-form-label">size</label>
-									<div class="col-7">
-										<select class="form-control" id="size3">
-											<option selected="selected">1</option>
-											<option>2</option>
-											<option>3</option>
-										</select>
-									</div>
-								</div>
-							
-						</div>
-					</div>
-					</div>
-					</div>
-					</div>	
-				</div>
-			</div>
-			
-			
-			
 		</div>
-		
-		<script>
-		
-		//window.onload = init();
-		var G ;
-		var friction;
-		var speed ;
-		var boxsize;
-		var lightspeed;
-		
-		window.onload = function(){
-		
-			var boxwrap = document.getElementById("boxwrapper");
-			boxsize = boxwrap.clientWidth -50;
-			
-			var box = document.getElementById("box");
-			box.style.width=boxsize+"px";
-			box.style.height=boxsize+"px";
-			
-			if (boxsize<400)
-				for (let t=1;t<=3;t++)
-					document.getElementById(`count${t}`).value =5;
-		
-		}
-		
-		function generate(){
-		
-			var sizearr=[7,10,14];
-			var color = ["red" , "blue" , "orange"];
-			
-			var container = document.getElementById("box");
-			var count ;
-			var weight;
-			var size ;
-			
-			lightspeed = boxsize/2;
-			
-			
-			
-			
-		
-			
-			
-			//const wm = new WeakMap();
-			
-			G = document.getElementById("gravity").value;
-			friction = document.getElementById("friction").value;
-			
-			
-			for (let t=1;t<=3;t++){
-			
-				count = parseInt(document.getElementById(`count${t}`).value , 10);
-				weight = parseInt(document.getElementById(`weight${t}`).value , 10);
-				size = parseInt(document.getElementById(`size${t}`).value , 10);
-				
-		
-				for(let i = 0 ; i < count ; i++){
-					var p = document.createElement("div");
-					p.className+="particle";
-					
-					
-					p.size = sizearr[size-1];
-					p.x = Math.random()*boxsize-p.size;
-					p.y = Math.random()*boxsize-p.size;
-					
-					p.style.left = p.x + "px";
-					p.style.top  = p.y + "px";
-					p.style.background = color[t-1];
-					
-					
-					p.style.height=p.size+"px";
-					p.style.width=p.size+"px";
-					
-					p.weight = weight;
-					p.vx=0;
-					p.vy=0;
-					container.appendChild(p);
-				}
-			}
-			
-			
-			
-		}
-		
-		function interact(p1,p2){
-			var dX = p1.x - p2.x;
-			var dY = p1.y - p2.y;
-			
-			
-		
-			
-			var R = Math.sqrt(dX**2+dY**2);
-			var F = G*p1.weight*p2.weight/R**2;
-			
-			var polar = (p1.style.background == p2.style.background)?1:-1;
-			
-			
-			p1.vx += dX/R*F/p1.weight*polar;
-			p1.vy += dY/R*F/p1.weight*polar;
-			
-				
-			
-			p2.vx -= dX/R*F/p2.weight*polar;
-			p2.vy -= dY/R*F/p2.weight*polar; 
-			
-			
-		}
-		
-		
-		function update(p){
-		
-			
-			
-			//TODO: OPTIMISE LOGIC
-			
-			
-			//for x
-			
-			var nolimx = true;
-			var nolimy = true;
-			
-			if ((p.x + p.vx )> boxsize-p.size){
-				nolimx = false;
-				p.x=boxsize-p.size;
-				if(p.vx > lightspeed)
-					p.vx = -lightspeed;
-				else
-					p.vx=-p.vx;
-			}
-			if((p.x + p.vx )<0){
-				nolimx = false;
-				p.x = 0;
-				if(p.vx < -lightspeed)
-					p.vx = lightspeed;
-				else
-					p.vx=-p.vx;
-			}
-			
-			//for y
-			if ((p.y + p.vy )> boxsize-p.size){
-				nolimy = false;
-				p.y=boxsize-p.size;
-				if(p.vy > lightspeed)
-					p.vy = -lightspeed;
-				else
-					p.vy=-p.vy;
-			}
-			if((p.y + p.vy )<0){
-				nolimy = false;
-				p.y = 0;
-				if(p.vy < -lightspeed)
-					p.vy = lightspeed;
-				else
-					p.vy=-p.vy;
-			}
-				
-			
-			
-			if (nolimy)
-				p.y+=p.vy;
-				
-			if(nolimx)
-				p.x+=p.vx;
-				
-			if (( p.x==0 ||p.x==(boxsize-p.size) )&& ( p.y==0 ||p.y==(boxsize-p.size) )){
-			p.x = Math.random()*boxsize-p.size;
-			p.y = Math.random()*boxsize-p.size;
-			}
-				
-				
-			
-			p.style.left = p.x + "px";
-			p.style.top = p.y + "px";
-			
-			
-			//friction
-			p.vy = p.vy*friction;
-			p.vx = p.vx*friction;
-			
-			
-			
-			
-		}
-		
-		function process(){
-			
-		var particles = document.getElementsByClassName("particle"); 
-			
-		for (let i = 0; i < particles.length-1 ; i++)
-			for( let j = i+1; j < particles.length ; j++)
-				interact(particles[i] , particles[j]);
-			
-			
-			for (let i = 0; i < particles.length ; i++)
-					update(particles[i]);	
-		
-		}
-		
-		function updatespeed(value){
-			speed = 50-value;
-			clearInterval(t);
-			t = setInterval(process,speed);
-		}
-		
-		var t ;
-		function start(){
-			generate();
-			speed = parseInt(document.getElementById("speed").value , 10);
-			speed = 50-speed;
-			t = setInterval(process,speed);	
-		}
-		
-		function stop(){
-		
-			clearInterval(t);
-			//del all particles
-			var particles = document.getElementsByClassName("particle"); 
-			while(particles.length > 0)
-				particles[0].parentNode.removeChild(particles[0]);
-    
-		}
-		
-	
-		</script>
-	
-	</body>
+		<div class="row">
+				<div id="boxwrapper"  class="col-xs-12  col-sm-12 col-lg-7 col-md-12">
+					<!--box for particles-->
+					<div id="box"> </div> 
+				</div>
+				<!--settings-->
+				<div class="col-xs-12  col-sm-12 col-lg-5 col-md-12">
+					<div class="row">
+						<!--first column-->
+						<div  class="col-xs-12  col-sm-12 col-lg-6 col-md-6">
+							<!--another row to display start button in other order on diferents displays-->
+							<div class = "row">
+								<div class="col-12 order-2 order-xs-2 order-sm-2 order-md-2 order-lg-1">
+									<!--RED-->
+									<div class="card border-danger mb-3 mt-3">
+										<div class="card-header" style="color:red;">Red particles</div>
+										<div class="card-body ">
+											<form>
+												<div class="form-group row">
+													<label class="col-5 col-form-label">count</label>
+													<div class="col-7">
+														<input type="text" class="form-control" id="count1" placeholder="count" value=10>
+													</div>
+												</div>
+												<div class="form-group row">
+													<label class="col-5 col-form-label">weight</label>
+													<div class="col-7">
+														<input type="text" class="form-control" id="weight1" placeholder="weight" value=1000>
+													</div>
+												</div>
+												<div class="form-group row">
+													<label class="col-5 col-form-label">size</label>
+													<div class="col-7">
+														<select class="form-control" id="size1">
+															<option>1</option>
+															<option >2</option>
+															<option selected="selected">3</option>
+														</select>
+													</div>
+												</div>
+											</form>
+										</div>
+									</div>
+								</div>
+								<!--PANEL-->
+								<div class="col-12 order-1 order-xs-1 order-sm-1 order-md-1 order-lg-2 mt-3 mt-xs-3 mt-sm-3 mt-md-3">
+									<div id="panel">
+										<form>
+											<div class="form-group">
+												<label>Speed:</label>
+												<input type="range" class="form-control-range" id="speed" min=1 max=50 value=30 step=1 onchange="updatespeed(this.value)">
+											</div>
+										</form>
+										<div class="input-group">
+											<div class="input-group-prepend">
+												<div class="input-group-text" >gravity</div>
+											</div>
+											<input type="text" class="form-control" placeholder="gravity" value=0.00667 aria-label="Input group example" aria-describedby="btnGroupAddon" id = "gravity">
+										</div>
+										<br>
+										<div class="input-group">
+											<div class="input-group-prepend">
+												<div class="input-group-text">friction</div>
+											</div>
+											<input type="text" class="form-control" placeholder="gravity" value=0.9989 aria-label="Input group example" aria-describedby="btnGroupAddon" id = "friction">
+										</div>
+										<br>
+										<div class="btn-group special" >
+											<input type="button" class="btn btn-primary btn-block" onclick="start()" value="Start"> 
+											<input type="button" class="btn btn-secondary" onclick="stop()" value="Reset"> 
+										</div>
+									</div>
+								</div>
+							</div>	
+						</div>
+						<!--settings , second column-->
+						<div  class="col-xs-12  col-sm-12 col-lg-6 col-md-6">
+							<!--BLUE-->
+							<div class="card border-primary mb-3 mb-xs-3 mb-sm-3 mt-xs-3 mt-sm-3">
+								<div class="card-header" style="color:blue;">Blue particles</div>
+								<div class="card-body ">
+									<form>
+										<div class="form-group row">
+											<label class="col-5 col-form-label">count</label>
+											<div class="col-7">
+												<input type="text" class="form-control" id="count2" placeholder="count" value=10>
+											</div>
+										</div>
+										<div class="form-group row">
+											<label class="col-5 col-form-label">weight</label>
+											<div class="col-7">
+												<input type="text" class="form-control" id="weight2" placeholder="weight" value=1000>
+											</div>
+										</div>												
+										<div class="form-group row">
+											<label class="col-5 col-form-label">size</label>
+											<div class="col-7">
+												<select class="form-control" id="size2">
+													<option>1</option>
+													<option selected="selected">2</option>
+													<option>3</option>
+												</select>
+											</div>
+										</div>
+									</form>
+								</div>
+							</div>
+							<!--ORANGE-->
+							<div class="card border-warning mb-3">
+								<div class="card-header" style="color:orange;">Orange particles</div>
+								<div class="card-body ">
+									<form>
+										<div class="form-group row">
+											<label  class="col-5 col-form-label">count</label>
+											<div class="col-7">
+													<input type="text" class="form-control" id="count3" placeholder="count" value=10>
+											</div>
+										</div>
+										<div class="form-group row">
+											<label class="col-5 col-form-label">weight</label>
+											<div class="col-7">
+												<input type="text" class="form-control" id="weight3" placeholder="weight" value=500>
+											</div>
+										</div>
+										<div class="form-group row">
+											<label  class="col-5 col-form-label">size</label>
+											<div class="col-7">
+												<select class="form-control" id="size3">
+													<option selected="selected">1</option>
+													<option>2</option>
+													<option>3</option>
+												</select>
+											</div>
+										</div>
+									</form>
+								</div>
+							</div>
+						</div>
+						<!--end of seccond column in settings-->
+					</div>
+				</div>	
+			</div>
+		</div>
+	</div>
+</body>
 </html>

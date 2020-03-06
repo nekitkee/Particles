@@ -1,0 +1,23 @@
+#box{
+	margin-left:auto;
+	margin-right:auto;
+	background: #d6eaf8 ;
+	border-style: solid;
+	position:relative;
+}
+.particle{
+	width:10px;
+	height:10px;
+	background:red;
+	border-radius:50%;
+	position:absolute;
+}
+.btn-group.special {
+	display: flex;
+}
+.col-form-label{
+	padding-right:0;
+}
+.special .btn {
+	flex: 1
+}
